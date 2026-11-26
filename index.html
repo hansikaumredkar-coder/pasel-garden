@@ -1,128 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>The Pastel Memory Garden ♡</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Memory Garden</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="background-decor decor-one">✿</div>
+  <div class="background-decor decor-two">♡</div>
+  <div class="background-decor decor-three">✧</div>
 
-    <!-- FLOATING DECORATIONS -->
+  <!-- PASSWORD SCREEN -->
+  <main id="welcome-screen" class="screen">
+    <section class="welcome-card">
+      <div class="gift">🎁</div>
+      <p class="eyebrow">A little surprise awaits</p>
+      <h1>Welcome to your<br><span>Memory Garden</span></h1>
+      <p class="intro">A tiny place filled with lovely memories and birthday wishes.</p>
 
-    <div class="background-decor">
-        <span class="decor">🌷</span>
-        <span class="decor">✧</span>
-        <span class="decor">🦋</span>
-        <span class="decor">♡</span>
-        <span class="decor">🌼</span>
-        <span class="decor">✿</span>
-    </div>
+      <label for="password">Your secret password</label>
+      <input
+        id="password"
+        type="text"
+        placeholder="Enter the password"
+        autocomplete="off"
+        autocapitalize="characters"
+        spellcheck="false"
+      >
 
-
-    <!-- WELCOME SCREEN -->
-
-    <section id="welcome-screen" class="screen">
-
-        <div class="top-label">
-            <span>✦</span> A LITTLE GIFT FOR YOU <span>✦</span>
-        </div>
-
-        <div class="welcome-illustration">
-
-            <div class="cloud cloud-left"></div>
-            <div class="cloud cloud-right"></div>
-
-            <div class="gift-box">
-
-                <div class="gift-lid">
-                    <div class="gift-bow">♡</div>
-                </div>
-
-                <div class="gift-body">
-                    <div class="gift-ribbon"></div>
-                    <span class="gift-heart">♡</span>
-                </div>
-
-            </div>
-
-            <span class="floating-heart heart-one">♡</span>
-            <span class="floating-heart heart-two">✧</span>
-            <span class="floating-heart heart-three">✿</span>
-
-        </div>
-
-        <h1>A Garden of<br><em>Little Memories</em></h1>
-
-        <p class="welcome-description">
-            A tiny world filled with photographs,
-            letters and little things worth remembering.
-        </p>
-
-        <div class="password-card">
-
-            <div class="lock-icon">🔐</div>
-
-            <label for="password">
-                Enter the secret password
-            </label>
-
-            <input
-                type="password"
-                id="password"
-                placeholder="Our little secret..."
-            >
-
-            <button id="unlock-btn">
-                Enter the garden ♡
-            </button>
-
-            <p id="error-message"></p>
-
-        </div>
-
-        <p class="bottom-note">
-            made with love, just for you
-        </p>
-
+      <button id="unlock-btn" type="button">Open the garden ✨</button>
+      <p id="error-message" class="error-message" aria-live="polite"></p>
+      <p class="hint">Psst… the password is a sweet little treat.</p>
     </section>
+  </main>
 
+  <!-- GARDEN SCREEN -->
+  <main id="garden-screen" class="screen hidden">
+    <section class="garden-card">
+      <p class="eyebrow">A birthday made of memories</p>
+      <h1>Welcome to the garden! 🌷</h1>
+      <p class="intro">
+        Your surprise is waiting here. We’ll fill this garden with photos,
+        memories, and little birthday messages next.
+      </p>
 
-    <!-- MAIN GARDEN -->
+      <div class="garden-flowers" aria-hidden="true">
+        <span>🌸</span><span>🌼</span><span>🌷</span><span>🌺</span>
+      </div>
 
-    <section id="garden-screen" class="screen hidden">
-
-        <header class="garden-header">
-
-            <p class="top-label">WELCOME TO YOUR LITTLE WORLD</p>
-
-            <h1>Dear Moonlight, <span>🌷</span></h1>
-
-            <p>
-                Every flower holds a memory.
-                Every little corner holds a piece of us.
-            </p>
-
-        </header>
-
-        <div class="garden-content">
-
-            <!-- We will add the photo gallery,
-                 memory timeline, letters,
-                 birthday countdown and surprises here. -->
-
-        </div>
-
+      <div id="garden-content"></div>
     </section>
+  </main>
 
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
