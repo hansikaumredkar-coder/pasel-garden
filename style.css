@@ -1,0 +1,413 @@
+
+/* =================================
+   PASTEL MEMORY GARDEN
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --lavender: #ded3f5;
+    --mint: #ccebdc;
+    --blue: #cce6f8;
+    --yellow: #fff0b8;
+    --peach: #ffdac8;
+    --pink: #f6d5e3;
+
+    --cream: #fffaf4;
+    --plum: #65536f;
+    --soft-plum: #96839e;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--plum);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =================================
+   BACKGROUND DECORATIONS
+================================= */
+
+.background-decor {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.decor {
+    position: absolute;
+    font-size: 35px;
+    opacity: 0.55;
+    animation: float 5s ease-in-out infinite;
+}
+
+.decor:nth-child(1) {
+    top: 10%;
+    left: 8%;
+}
+
+.decor:nth-child(2) {
+    top: 20%;
+    right: 12%;
+    color: #b59ce4;
+}
+
+.decor:nth-child(3) {
+    top: 55%;
+    right: 7%;
+    animation-delay: 1s;
+}
+
+.decor:nth-child(4) {
+    bottom: 25%;
+    left: 10%;
+    color: #d89cb9;
+}
+
+.decor:nth-child(5) {
+    bottom: 10%;
+    right: 18%;
+    animation-delay: 2s;
+}
+
+.decor:nth-child(6) {
+    top: 65%;
+    left: 20%;
+    color: #d7b66b;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(8deg);
+    }
+}
+
+/* =================================
+   SCREEN LAYOUT
+================================= */
+
+.screen {
+    min-height: 100vh;
+    padding: 45px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* =================================
+   TEXT STYLING
+================================= */
+
+.top-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a18bb8;
+    margin-bottom: 20px;
+}
+
+.top-label span {
+    color: #d9b66e;
+    padding: 0 5px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 7vw, 55px);
+    line-height: 1.2;
+    color: #746087;
+}
+
+h1 em {
+    color: #b68aaf;
+    font-weight: 500;
+}
+
+.welcome-description {
+    max-width: 380px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--soft-plum);
+    margin: 20px auto 30px;
+}
+
+/* =================================
+   GIFT BOX ILLUSTRATION
+================================= */
+
+.welcome-illustration {
+    position: relative;
+    width: 250px;
+    height: 210px;
+    margin: 5px 0 20px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.gift-box {
+    position: absolute;
+    width: 150px;
+    height: 135px;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 100px;
+    background: var(--lavender);
+    border: 3px solid #c0aee7;
+    border-radius: 12px;
+    box-shadow: 0 12px 20px rgba(124, 100, 160, 0.12);
+}
+
+.gift-ribbon {
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f2c7d8;
+}
+
+.gift-heart {
+    position: absolute;
+    font-size: 35px;
+    color: white;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gift-lid {
+    position: absolute;
+    width: 170px;
+    height: 35px;
+    background: var(--pink);
+    border: 3px solid #e1afc4;
+    border-radius: 10px;
+    left: -10px;
+    top: 0;
+    z-index: 2;
+}
+
+.gift-bow {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border: 8px solid #d9a6c1;
+    border-radius: 50% 50% 10% 50%;
+    transform: rotate(-35deg);
+    top: -30px;
+    left: 55px;
+    background: var(--peach);
+    color: transparent;
+}
+
+.cloud {
+    position: absolute;
+    width: 65px;
+    height: 25px;
+    background: var(--blue);
+    border-radius: 30px;
+    opacity: 0.8;
+}
+
+.cloud::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: inherit;
+    border-radius: 50%;
+    top: -12px;
+    left: 12px;
+}
+
+.cloud-left {
+    top: 45px;
+    left: 0;
+}
+
+.cloud-right {
+    top: 85px;
+    right: 0;
+    background: var(--mint);
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.heart-one {
+    top: 15px;
+    left: 35px;
+    color: #d99ab7;
+}
+
+.heart-two {
+    top: 20px;
+    right: 40px;
+    color: #d7b66b;
+}
+
+.heart-three {
+    bottom: 0;
+    right: 20px;
+    color: #9fcbb6;
+}
+
+/* =================================
+   PASSWORD CARD
+================================= */
+
+.password-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    background: white;
+    border: 1px solid #e9dff1;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(122, 100, 150, 0.1);
+}
+
+.lock-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.password-card label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd0e9;
+    border-radius: 12px;
+    background: #fffafc;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: center;
+    color: var(--plum);
+    outline: none;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    border-color: #a18bb8;
+    box-shadow: 0 0 0 3px #ded3f566;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#unlock-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--lavender);
+    color: #65536f;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+#unlock-btn:hover {
+    background: #c9b8eb;
+    transform: translateY(-2px);
+}
+
+#error-message {
+    font-size: 13px;
+    color: #bd6f88;
+    margin-top: 12px;
+}
+
+.bottom-note {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: #b69ab8;
+    margin-top: 30px;
+}
+
+/* =================================
+   GARDEN SCREEN
+================================= */
+
+#garden-screen {
+    justify-content: flex-start;
+    padding-top: 65px;
+}
+
+.garden-header {
+    max-width: 600px;
+    margin-bottom: 45px;
+}
+
+.garden-header h1 {
+    margin: 15px 0;
+}
+
+.garden-header h1 span {
+    font-size: 30px;
+}
+
+.garden-header > p:last-child {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--soft-plum);
+}
+
+.garden-content {
+    width: 100%;
+    max-width: 950px;
+}
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+    .screen {
+        padding: 35px 18px;
+    }
+
+    .welcome-illustration {
+        transform: scale(0.9);
+        margin-bottom: 10px;
+    }
+
+    .password-card {
+        padding: 25px 20px;
+    }
+
+    .decor {
+        font-size: 25px;
+    }
+}
