@@ -17,7 +17,9 @@
       <div class="gift">🎁</div>
       <p class="eyebrow">A little surprise awaits</p>
       <h1>Welcome to your<br><span>Memory Garden</span></h1>
-      <p class="intro">A tiny place filled with lovely memories and birthday wishes.</p>
+      <p class="intro">
+        A tiny place filled with lovely memories, birthday wishes, and surprises.
+      </p>
 
       <label for="password">Your secret password</label>
       <input
@@ -35,23 +37,167 @@
     </section>
   </main>
 
-  <!-- GARDEN SCREEN -->
+  <!-- MAIN GARDEN -->
   <main id="garden-screen" class="screen hidden">
-    <section class="garden-card">
+    <header class="garden-header">
       <p class="eyebrow">A birthday made of memories</p>
-      <h1>Welcome to the garden! 🌷</h1>
+      <h1>Happy Birthday, <span>Moonlight!</span> 🌷</h1>
       <p class="intro">
-        Your surprise is waiting here. We’ll fill this garden with photos,
-        memories, and little birthday messages next.
+        A little garden made just for you, filled with moments worth keeping.
       </p>
+    </header>
 
-      <div class="garden-flowers" aria-hidden="true">
-        <span>🌸</span><span>🌼</span><span>🌷</span><span>🌺</span>
+    <!-- NAVIGATION -->
+    <nav class="garden-nav" aria-label="Garden sections">
+      <button class="nav-button active" data-section="memories">Memories</button>
+      <button class="nav-button" data-section="wishes">Birthday wishes</button>
+      <button class="nav-button" data-section="letter">Your letter</button>
+      <button class="nav-button" data-section="quiz">Little quiz</button>
+      <button class="nav-button" data-section="surprise">Final surprise</button>
+    </nav>
+
+    <!-- MEMORIES SECTION -->
+    <section id="memories" class="garden-section active">
+      <div class="section-heading">
+        <p class="eyebrow">Little moments, forever</p>
+        <h2>Our memory garden 📸</h2>
+        <p>Tap a photo to see it a little bigger.</p>
       </div>
 
-      <div id="garden-content"></div>
+      <div class="photo-grid">
+        <button class="photo-card" data-photo="assets/photos/photo1.jpg">
+          <img src="assets/photos/photo1.jpg" alt="Memory photo one">
+          <span>Memory one ♡</span>
+        </button>
+
+        <button class="photo-card" data-photo="assets/photos/photo2.jpg">
+          <img src="assets/photos/photo2.jpg" alt="Memory photo two">
+          <span>Memory two ✨</span>
+        </button>
+
+        <button class="photo-card" data-photo="assets/photos/photo3.jpg">
+          <img src="assets/photos/photo3.jpg" alt="Memory photo three">
+          <span>Memory three 🌷</span>
+        </button>
+
+        <button class="photo-card" data-photo="assets/photos/photo4.jpg">
+          <img src="assets/photos/photo4.jpg" alt="Memory photo four">
+          <span>Memory four 💌</span>
+        </button>
+      </div>
+
+      <p class="small-note">
+        Replace these sample photos with your own images in the photos folder.
+      </p>
+    </section>
+
+    <!-- BIRTHDAY WISHES SECTION -->
+    <section id="wishes" class="garden-section">
+      <div class="section-heading">
+        <p class="eyebrow">A handful of happy thoughts</p>
+        <h2>Birthday wishes 💐</h2>
+      </div>
+
+      <div class="wish-grid">
+        <article class="wish-card wish-pink">
+          <span class="wish-icon">🌸</span>
+          <h3>More laughter</h3>
+          <p>May your days be full of little things that make you smile.</p>
+        </article>
+
+        <article class="wish-card wish-lavender">
+          <span class="wish-icon">🦋</span>
+          <h3>Beautiful beginnings</h3>
+          <p>May this new chapter bring you lovely surprises and new dreams.</p>
+        </article>
+
+        <article class="wish-card wish-yellow">
+          <span class="wish-icon">⭐</span>
+          <h3>All your wishes</h3>
+          <p>May the things you quietly hope for find their way to you.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LETTER SECTION -->
+    <section id="letter" class="garden-section">
+      <div class="section-heading">
+        <p class="eyebrow">Written with love</p>
+        <h2>A little letter 💌</h2>
+        <p>There’s something waiting for you inside.</p>
+      </div>
+
+      <button id="open-letter-btn" class="big-action">
+        Open your letter
+      </button>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section id="quiz" class="garden-section">
+      <div class="section-heading">
+        <p class="eyebrow">Just for fun</p>
+        <h2>A tiny birthday quiz 🎀</h2>
+      </div>
+
+      <div class="quiz-card">
+        <p id="quiz-question">Which treat belongs at a birthday party?</p>
+
+        <div class="quiz-options">
+          <button class="quiz-option" data-answer="wrong">Pickles</button>
+          <button class="quiz-option" data-answer="correct">Birthday cake</button>
+          <button class="quiz-option" data-answer="wrong">Broccoli soup</button>
+        </div>
+
+        <p id="quiz-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- FINAL SURPRISE SECTION -->
+    <section id="surprise" class="garden-section">
+      <div class="section-heading">
+        <p class="eyebrow">One last little thing</p>
+        <h2>Your final surprise 🎁</h2>
+        <p>Ready to open the last gift?</p>
+      </div>
+
+      <button id="surprise-btn" class="big-action">
+        Reveal the surprise ✨
+      </button>
+
+      <div id="surprise-message" class="surprise-message hidden">
+        <span class="surprise-emoji">🎂</span>
+        <h3>You deserve a day as lovely as you are!</h3>
+        <p>Happy Birthday, Moonlight. Keep shining, always. ♡</p>
+      </div>
     </section>
   </main>
+
+  <!-- PHOTO POP-UP -->
+  <div id="photo-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Photo preview">
+    <div class="modal-card photo-modal-card">
+      <button class="modal-close" data-close="photo-modal" aria-label="Close photo">×</button>
+      <img id="modal-photo" src="" alt="Expanded memory">
+    </div>
+  </div>
+
+  <!-- LETTER POP-UP -->
+  <div id="letter-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Birthday letter">
+    <div class="modal-card letter-modal-card">
+      <button class="modal-close" data-close="letter-modal" aria-label="Close letter">×</button>
+      <p class="eyebrow">A letter for you</p>
+      <h2>Dear Moonlight,</h2>
+      <p>
+        Happy Birthday! I hope this year brings you gentle days, exciting
+        adventures, and so many reasons to smile. You deserve kindness,
+        happiness, and all the beautiful things life has to offer.
+      </p>
+      <p>
+        Thank you for being such a special part of my world. I hope you always
+        remember how loved and appreciated you are.
+      </p>
+      <p class="letter-signoff">With lots of love, always ♡</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
